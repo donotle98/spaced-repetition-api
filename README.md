@@ -1,5 +1,6 @@
 # Spaced repetition API!
 
+<p>Server uses a linked list data structure to keep track of the words the user needs to learn</p>
 <h2>API documentation</h2>
 <span>POST '/api/auth'</span>
 <p>Posting a login with a username and password, this endpoint will make sure they match and will create a json web token</p>
