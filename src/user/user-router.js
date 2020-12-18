@@ -6,6 +6,9 @@ const userRouter = express.Router();
 const jsonBodyParser = express.json();
 
 userRouter
+    .get("/", (req, res) => {
+        res.json("GET USERS");
+    })
     .post("/", jsonBodyParser, async (req, res, next) => {
         const { password, username, name } = req.body;
 
@@ -52,9 +55,6 @@ userRouter
         } catch (error) {
             next(error);
         }
-    })
-    .get("/", (req, res) => {
-        res.json(UserService.getAllUsers(req.app.get("db")));
     });
 
 module.exports = userRouter;
